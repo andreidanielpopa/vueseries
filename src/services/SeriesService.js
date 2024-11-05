@@ -60,22 +60,24 @@ export default class ServiceDepartamentos {
         })
     }
 
-    updateDepartamento(departamento) {
+    modificarPersonaje(idPersonaje,idSerie) {
         return new Promise(function (resolve) {
-            let request = 'api/departamentos';
-            let url = Global.urlApiDepartamentos + request;
-            axios.put(url, departamento).then(response => {
+            let request = '/api/Personajes/'+idPersonaje+'/'+idSerie;
+            let url = Global.urlApiSeries + request;
+            axios.put(url).then(response => {
                 resolve(response);
             })
         })
     }
 
-    deleteDepartamento(id) {
+    findPersonaje(id) {
         return new Promise(function (resolve) {
-            let request = 'api/departamentos/' + id;
-            let url = Global.urlApiDepartamentos + request;
-            axios.delete(url).then(response => {
-                resolve(response);
+            let request = 'api/personajes/' + id;
+            let url = Global.urlApiSeries + request;
+            let personaje = {};
+            axios.get(url).then(response => {
+                personaje = response.data;
+                resolve(personaje);
             })
         })
     }

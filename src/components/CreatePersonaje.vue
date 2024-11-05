@@ -51,7 +51,8 @@ export default {
   methods: {
     insertPersonaje() {
       service.createPersonaje(this.personaje).then((result) => {
-        this.mensaje = "Personaje creado" + result;
+        console.log(result);
+        this.$router.push("/personajes/"+this.personaje.idSerie);
       });
     },
   },

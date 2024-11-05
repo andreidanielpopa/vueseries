@@ -4,7 +4,7 @@
     <router-link class="btn btn-info" :to="'/serie/' + id"
       >Volver a la serie</router-link
     >
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Personaje</th>
